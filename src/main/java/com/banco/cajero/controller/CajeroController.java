@@ -30,7 +30,7 @@ public class CajeroController {
 	public DtoEfectivo retirarEfectivo(@PathVariable(name = "retiro") String retiro) {
 		DtoEfectivo efectivo = new DtoEfectivo();
 		if (validarCantidadRetiro(retiro)) {
-			efectivo = cajeroService.retirarEfectivo(Double.valueOf(retiro));
+			efectivo = cajeroService.retirarEfectivo(Double.valueOf(retiro) / 100);
 			cajeroService.consultarEfectivo();
 		}
 		
